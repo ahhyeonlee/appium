@@ -23,7 +23,7 @@
                                             <tr>
                                                 <th class="text-center">{{ forloop.counter }}</th>
                                                 <td class="text-center">{{ scenario.title }}</td>
-                                                <td class="text-center">{{ scenario.use_yn }}</td>
+                                                <td class="text-center">{% if scenario.use_yn == 'y' %}사용{%else%}미사용{% endif %}</td>
                                                 <td class="text-center">{{ scenario.description}}</span></td>
                                                 <td class="text-center">
                                                 <div class="btn btn-primary" onClick="location.href='detail/{{scenario.id}}'">수정</div>

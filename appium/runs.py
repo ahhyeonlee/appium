@@ -2,19 +2,19 @@ from appium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-import time, requests
+import time, requests, sys
 import mail as m
 import drivers as d 
 import settings as s
 
 global results, driver
 
-def run() :
+def run(device_id) :
     results = []
-    desired_caps = s.setting("Nexus_6_API_30")
+    desired_caps = s.setting(device_id)
     driver =  webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
     driver.switch_to.context('NATIVE_APP')
-    appium(results, driver, "KT멤버십")
+    appium(results, driver, desired_caps['app_name'])
     driver.quit()
     m.mail(results)
 
@@ -46,4 +46,5 @@ def appium(results, driver, app_name):
         results.append([scenario['title'], case_result])
 
 if __name__ == "__main__":
-	run()
+    # execute only if run as a script
+    run("c30415b70999406ca2e478c38fa5ebec")

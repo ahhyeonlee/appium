@@ -8,7 +8,7 @@ def mail(results):
 
     s = smtplib.SMTP_SSL('smtp.gmail.com')
     s.login(send_email, send_pw)
-    receive_emails = ['ahhyeon.lee@kt.com']
+    receive_emails = ['ahhyeon.lee@kt.com', 'ahzzng@naver.com']
 
     for receive in receive_emails:
         msg = MIMEMultipart('alternative')
