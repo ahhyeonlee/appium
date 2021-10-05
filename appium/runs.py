@@ -45,6 +45,9 @@ def appium(results, driver, app_name):
                 case_result.append(temp)
         results.append([scenario['title'], case_result])
 
+
 if __name__ == "__main__":
-    # execute only if run as a script
-    run("c30415b70999406ca2e478c38fa5ebec")
+    if sys.argv[1] is not None :
+        run(sys.argv[1])
+    else : 
+        run("c30415b70999406ca2e478c38fa5ebec")
