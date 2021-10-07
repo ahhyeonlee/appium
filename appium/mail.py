@@ -3,8 +3,8 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 def mail(results):
-    send_email = "ataproject21@gmail.com"
-    send_pw = "new!1234new"
+    send_email = ""
+    send_pw = ""
 
     s = smtplib.SMTP_SSL('smtp.gmail.com')
     s.login(send_email, send_pw)
